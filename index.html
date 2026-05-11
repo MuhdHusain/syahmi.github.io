@@ -1,4 +1,381 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Digital Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.25), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.18), transparent 30%);
+      z-index: -2;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(15px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 110px 8% 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero {
+      text-align: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 85px);
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #38bdf8, #a78bfa, #34d399);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      margin-top: 35px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.6);
+    }
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      color: #38bdf8;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+      padding: 30px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #38bdf8;
+    }
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.8;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .app-card {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .app-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .app-card h3,
+    .review-card h3 {
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+
+    .app-card p,
+    .review-card p {
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .contact-links a {
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-links a:hover {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      section {
+        padding-top: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#apps">5 Apps</a></li>
+      <li><a href="#review">Review</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <h1>Hello, I'm Husain</h1>
+    <p>
+      Welcome to my digital portfolio. This website shows who I am, the digital platforms I use,
+      my reviews, and how these tools can support teaching and learning in a modern classroom.
+    </p>
+    <a href="#about" class="btn">Explore My Portfolio</a>
+  </section>
+
+  <section id="about">
+    <h2 class="reveal">About Me</h2>
+    <div class="card about-box reveal">
+      <p>
+        My name is Husain. I am a student who is interested in technology, digital learning,
+        creative design, and modern teaching tools. I enjoy exploring platforms that make learning
+        more interactive, engaging, and easier for students to understand.
+      </p>
+      <br>
+      <p>
+        This e-portfolio highlights five digital applications that can be used in education.
+        Each app has its own strengths and can help teachers create better learning experiences.
+      </p>
+    </div>
+  </section>
+
+  <section id="apps">
+    <h2 class="reveal">5 Apps I Use</h2>
+    <div class="grid">
+      <a href="#canva" style="text-decoration:none;color:inherit;">
+        <div class="card app-card reveal">
+          <div class="app-icon">🎨</div>
+          <h3>Canva</h3>
+          <p>Design posters, slides, infographics, and creative classroom materials.</p>
+        </div>
+      </a>
+
+      <a href="#kahoot" style="text-decoration:none;color:inherit;">
+        <div class="card app-card reveal">
+          <div class="app-icon">🎮</div>
+          <h3>Kahoot</h3>
+          <p>Create fun quizzes and game-based learning activities.</p>
+        </div>
+      </a>
+
+      <a href="#padlet" style="text-decoration:none;color:inherit;">
+        <div class="card app-card reveal">
+          <div class="app-icon">🧱</div>
+          <h3>Padlet</h3>
+          <p>Share ideas, notes, images, and group discussion posts.</p>
+        </div>
+      </a>
+
+      <a href="#quizizz" style="text-decoration:none;color:inherit;">
+        <div class="card app-card reveal">
+          <div class="app-icon">✅</div>
+          <h3>Quizizz</h3>
+          <p>Interactive quizzes for revision, assessment, and learning practice.</p>
+        </div>
+      </a>
+
+      <a href="#classroom" style="text-decoration:none;color:inherit;">
+        <div class="card app-card reveal">
+          <div class="app-icon">📚</div>
+          <h3>Google Classroom</h3>
+          <p>Manage assignments, materials, feedback, and class communication.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="canva">
+    <h2 class="reveal">Canva</h2>
+    <div class="card about-box reveal">
+      <p>
+        Canva is useful for creating creative teaching materials such as posters, presentations,
+        infographics, worksheets, and classroom visuals. It helps teachers make lessons more attractive
+        and easier for students to understand.
+      </p>
+    </div>
+  </section>
+
+  <section id="kahoot">
+    <h2 class="reveal">Kahoot</h2>
+    <div class="card about-box reveal">
+      <p>
+        Kahoot uses game-based learning to make quizzes more exciting. It can increase student motivation,
+        encourage participation, and make revision sessions more fun.
+      </p>
+    </div>
+  </section>
+
+  <section id="padlet">
+    <h2 class="reveal">Padlet</h2>
+    <div class="card about-box reveal">
+      <p>
+        Padlet works like a digital wall where students can share ideas, upload images, answer questions,
+        and collaborate with classmates. It is very useful for brainstorming and discussion activities.
+      </p>
+    </div>
+  </section>
+
+  <section id="quizizz">
+    <h2 class="reveal">Quizizz</h2>
+    <div class="card about-box reveal">
+      <p>
+        Quizizz allows teachers to create interactive quizzes that students can answer at their own pace.
+        It is suitable for formative assessment, revision, and checking student understanding.
+      </p>
+    </div>
+  </section>
+
+  <section id="classroom">
     <h2 class="reveal">Google Classroom</h2>
     <div class="card about-box reveal">
       <p>
