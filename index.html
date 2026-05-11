@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Digital Portfolio</title>
+  <title>Husain Fitness Portfolio</title>
 
   <style>
     * {
@@ -14,9 +14,9 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+      background: #050505;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
@@ -25,188 +25,410 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.25), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.25), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.18), transparent 30%);
+        radial-gradient(circle at 20% 15%, rgba(220, 38, 38, 0.24), transparent 28%),
+        radial-gradient(circle at 90% 30%, rgba(127, 29, 29, 0.2), transparent 35%),
+        radial-gradient(circle at 15% 90%, rgba(239, 68, 68, 0.15), transparent 30%),
+        linear-gradient(120deg, #030303, #101010, #050505);
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 55px 55px;
       z-index: -2;
+      opacity: 0.6;
     }
 
     nav {
       position: fixed;
+      left: 0;
       top: 0;
-      width: 100%;
-      padding: 18px 8%;
+      width: 150px;
+      height: 100vh;
+      padding: 32px 16px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(15px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.9);
+      border-right: 1px solid rgba(239, 68, 68, 0.35);
+      box-shadow: 10px 0 35px rgba(220, 38, 38, 0.14);
+      z-index: 999;
     }
 
     .logo {
-      font-weight: bold;
-      font-size: 22px;
-      color: #38bdf8;
+      color: #ef4444;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 52px;
+      text-align: center;
+    }
+
+    .logo span {
+      display: block;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 3px;
     }
 
     nav ul {
+      width: 100%;
       list-style: none;
       display: flex;
-      gap: 25px;
+      flex-direction: column;
+      gap: 18px;
     }
 
     nav a {
-      color: white;
+      display: block;
+      color: #d1d5db;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 16px 8px;
+      border-radius: 14px;
+      border: 1px solid transparent;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #fff;
+      background: rgba(220, 38, 38, 0.22);
+      border-color: rgba(239, 68, 68, 0.6);
+      transform: translateX(6px);
     }
 
     section {
       min-height: 100vh;
-      padding: 110px 8% 70px;
+      margin-left: 150px;
+      padding: 95px 8% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    section::after {
+      content: attr(data-number);
+      position: absolute;
+      right: 6%;
+      top: 65px;
+      font-size: clamp(70px, 11vw, 150px);
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(239, 68, 68, 0.38);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    h1 {
+      font-size: clamp(50px, 8vw, 100px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      animation: floatTitle 3s ease-in-out infinite;
+    }
+
+    h1 span, h2 span {
+      color: #ef4444;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 95px;
+      height: 4px;
+      background: #ef4444;
+      margin-top: 12px;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.85);
+    }
+
+    p {
+      font-family: Arial, sans-serif;
+      color: #d1d5db;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 34px;
+      padding: 15px 36px;
+      color: white;
+      border: 2px solid #ef4444;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 900;
+      box-shadow: 0 0 25px rgba(220, 38, 38, 0.18);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ef4444;
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(220, 38, 38, 0.55);
+    }
+
+    .card {
+      background: rgba(15, 15, 15, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+      transition: 0.35s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #ef4444;
+      box-shadow: 0 20px 45px rgba(220, 38, 38, 0.22);
+    }
+
+    .about-box {
+      max-width: 820px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    .stat {
+      padding-left: 15px;
+      border-left: 4px solid #ef4444;
+      color: #d1d5db;
+    }
+
+    .stat strong {
+      display: block;
+      color: #ef4444;
+      font-size: 30px;
+      font-family: Impact, 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-card {
+      text-align: center;
+      min-height: 210px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .hero {
-      text-align: center;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 8vw, 85px);
-      margin-bottom: 18px;
-      background: linear-gradient(90deg, #38bdf8, #a78bfa, #34d399);
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: 20px;
-      line-height: 1.7;
-      color: #cbd5e1;
-    }
-
-    .btn {
-      margin-top: 35px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #38bdf8, #8b5cf6);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 35px rgba(139, 92, 246, 0.6);
-    }
-
-    h2 {
-      font-size: 42px;
-      margin-bottom: 25px;
-      color: #38bdf8;
-      text-align: center;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 25px;
-      padding: 30px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-      transition: 0.4s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: #38bdf8;
-    }
-
-    .about-box {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.8;
-      color: #cbd5e1;
-      font-size: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .app-card {
-      text-align: center;
-      cursor: pointer;
-    }
-
     .app-icon {
-      font-size: 45px;
+      font-size: 48px;
       margin-bottom: 15px;
+      filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.45));
     }
 
     .app-card h3,
     .review-card h3 {
       margin-bottom: 12px;
-      color: #f8fafc;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .app-card p,
     .review-card p {
-      color: #cbd5e1;
-      line-height: 1.6;
+      font-size: 15px;
     }
 
     .contact-box {
-      max-width: 650px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .contact-box p {
-      color: #cbd5e1;
-      margin-bottom: 20px;
-      line-height: 1.7;
+      max-width: 720px;
     }
 
     .contact-links {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 15px;
       margin-top: 25px;
     }
 
     .contact-links a {
-      padding: 12px 22px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
+      padding: 13px 24px;
+      background: rgba(239, 68, 68, 0.1);
       color: white;
       text-decoration: none;
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       transition: 0.3s;
-      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .contact-links a:hover {
-      background: #38bdf8;
-      color: #020617;
+      background: #ef4444;
+      transform: translateY(-5px);
+    }
+
+    .fitness-guide {
+      position: fixed;
+      right: 28px;
+      bottom: 25px;
+      width: 230px;
+      height: 205px;
+      z-index: 998;
+      pointer-events: none;
+      animation: guideFloat 2.3s ease-in-out infinite;
+    }
+
+    .guide-speech {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 190px;
+      padding: 12px 14px;
+      background: #0b0b0b;
+      border: 1px solid rgba(239, 68, 68, 0.75);
+      color: white;
+      border-radius: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.4;
+      box-shadow: 0 0 25px rgba(220, 38, 38, 0.28);
+    }
+
+    .guide-speech span {
+      color: #ef4444;
+    }
+
+    .guide-speech::after {
+      content: "";
+      position: absolute;
+      right: 28px;
+      bottom: -12px;
+      width: 22px;
+      height: 22px;
+      background: #0b0b0b;
+      border-right: 1px solid rgba(239, 68, 68, 0.75);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.75);
+      transform: rotate(45deg);
+    }
+
+    .guide-body {
+      position: absolute;
+      bottom: 0;
+      right: 52px;
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(0 0 22px rgba(239, 68, 68, 0.5));
+    }
+
+    .guide-body::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      bottom: 0;
+      width: 105px;
+      height: 16px;
+      border: 2px solid #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 18px rgba(239, 68, 68, 0.8);
+    }
+
+    .hair {
+      position: absolute;
+      top: 8px;
+      left: 34px;
+      width: 55px;
+      height: 32px;
+      background: #111;
+      border-radius: 70% 70% 30% 30%;
+      z-index: 5;
+      transform: rotate(-7deg);
+    }
+
+    .hair::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 9px;
+      width: 40px;
+      height: 30px;
+      background: #1f1f1f;
+      clip-path: polygon(0 100%, 25% 0, 50% 100%, 75% 0, 100% 100%);
+    }
+
+    .head {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      width: 70px;
+      height: 76px;
+      background: #f2b28d;
+      border-radius: 48% 48% 45% 45%;
+      border: 3px solid #7f1d1d;
+      z-index: 4;
+      box-shadow: inset -8px -8px 0 rgba(0,0,0,0.12);
+    }
+
+    .head::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 17px;
+      width: 7px;
+      height: 7px;
+      background: #111;
+      border-radius: 50%;
+      box-shadow: 26px 0 #111;
+    }
+
+    .head::after {
+      content: "";
+      position: absolute;
+      left: 23px;
+      bottom: 18px;
+      width: 25px;
+      height: 11px;
+      border-bottom: 4px solid #7f1d1d;
+      border-radius: 50%;
+    }
+
+    .head:hover {
+      transform: scale(1.03);
     }
 
     .reveal {
@@ -221,32 +443,69 @@
     }
 
     footer {
+      margin-left: 150px;
       text-align: center;
       padding: 25px;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #9ca3af;
+      background: rgba(0, 0, 0, 0.65);
+      border-top: 1px solid rgba(239, 68, 68, 0.18);
+      font-family: Arial, sans-serif;
     }
 
-    @keyframes float {
+    @keyframes floatTitle {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-10px); }
     }
 
-    @media (max-width: 768px) {
+    @keyframes guideFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 850px) {
       nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        width: 100%;
+        height: auto;
+        padding: 14px;
+      }
+
+      .logo {
+        margin-bottom: 12px;
       }
 
       nav ul {
-        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: center;
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      nav a {
+        padding: 9px 10px;
+        font-size: 11px;
+      }
+
+      section,
+      footer {
+        margin-left: 0;
       }
 
       section {
-        padding-top: 150px;
+        padding: 155px 6% 80px;
+      }
+
+      .fitness-guide {
+        width: 155px;
+        height: 220px;
+        right: 8px;
+        bottom: 8px;
+        transform: scale(0.72);
+        transform-origin: bottom right;
+      }
+
+      .guide-speech {
+        width: 145px;
+        font-size: 11px;
       }
     }
   </style>
@@ -254,190 +513,156 @@
 
 <body>
   <nav>
-    <div class="logo">MyPortfolio</div>
+    <div class="logo">FIT<span>PORTFOLIO</span></div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
-      <li><a href="#apps">5 Apps</a></li>
-      <li><a href="#review">Review</a></li>
+      <li><a href="#apps">Apps I Use</a></li>
+      <li><a href="#review">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="home" class="hero">
-    <h1>Hello, I'm Husain</h1>
-    <p>
-      Welcome to my digital portfolio. This website shows who I am, the digital platforms I use,
-      my reviews, and how these tools can support teaching and learning in a modern classroom.
-    </p>
-    <a href="#about" class="btn">Explore My Portfolio</a>
+  <div class="fitness-guide">
+    <div class="guide-speech" id="guideText">Yo! Welcome. <span>Let's start!</span> 💪</div>
+    <div class="guide-body">
+      <div class="hair"></div>
+      <div class="head"></div>
+    </div>
+  </div>
+
+  <section id="home" data-number="01">
+    <div class="hero-content reveal">
+      <h1>Discipline <span>Builds Greatness</span></h1>
+      <p>
+        Welcome to my fitness class digital portfolio. I’m Husain, and this page shows my fitness learning journey,
+        the digital apps I use, my review, and how technology can make fitness education more active and exciting.
+      </p>
+      <a href="#about" class="btn">Let's Begin</a>
+    </div>
   </section>
 
-  <section id="about">
-    <h2 class="reveal">About Me</h2>
+  <section id="about" data-number="02">
+    <h2 class="reveal">About <span>Me</span></h2>
     <div class="card about-box reveal">
       <p>
-        My name is Husain. I am a student who is interested in technology, digital learning,
+        My name is Husain. I am a student who is interested in fitness, technology, digital learning,
         creative design, and modern teaching tools. I enjoy exploring platforms that make learning
-        more interactive, engaging, and easier for students to understand.
+        more active, interactive, engaging, and easier for students to understand.
       </p>
       <br>
       <p>
-        This e-portfolio highlights five digital applications that can be used in education.
-        Each app has its own strengths and can help teachers create better learning experiences.
+        This e-portfolio highlights five digital applications that can be used in a fitness class.
+        Each app has its own strengths and can help teachers create better, healthier, and more exciting learning experiences.
       </p>
+      <div class="stats">
+        <div class="stat"><strong>5</strong>Fitness Apps</div>
+        <div class="stat"><strong>100%</strong>Effort</div>
+        <div class="stat"><strong>1</strong>Goal: Improve</div>
+      </div>
     </div>
   </section>
 
-  <section id="apps">
-    <h2 class="reveal">5 Apps I Use</h2>
+  <section id="apps" data-number="03">
+    <h2 class="reveal">Apps <span>I Use</span></h2>
     <div class="grid">
-      <a href="#canva" style="text-decoration:none;color:inherit;">
-        <div class="card app-card reveal">
-          <div class="app-icon">🎨</div>
-          <h3>Canva</h3>
-          <p>Design posters, slides, infographics, and creative classroom materials.</p>
-        </div>
-      </a>
-
-      <a href="#kahoot" style="text-decoration:none;color:inherit;">
-        <div class="card app-card reveal">
-          <div class="app-icon">🎮</div>
-          <h3>Kahoot</h3>
-          <p>Create fun quizzes and game-based learning activities.</p>
-        </div>
-      </a>
-
-      <a href="#padlet" style="text-decoration:none;color:inherit;">
-        <div class="card app-card reveal">
-          <div class="app-icon">🧱</div>
-          <h3>Padlet</h3>
-          <p>Share ideas, notes, images, and group discussion posts.</p>
-        </div>
-      </a>
-
-      <a href="#quizizz" style="text-decoration:none;color:inherit;">
-        <div class="card app-card reveal">
-          <div class="app-icon">✅</div>
-          <h3>Quizizz</h3>
-          <p>Interactive quizzes for revision, assessment, and learning practice.</p>
-        </div>
-      </a>
-
-      <a href="#classroom" style="text-decoration:none;color:inherit;">
-        <div class="card app-card reveal">
-          <div class="app-icon">📚</div>
-          <h3>Google Classroom</h3>
-          <p>Manage assignments, materials, feedback, and class communication.</p>
-        </div>
-      </a>
+      <a href="#canva" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🎨</div><h3>Canva</h3><p>Design posters, slides, infographics, and creative fitness class materials.</p></div></a>
+      <a href="#kahoot" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🎮</div><h3>Kahoot</h3><p>Create fun quizzes and game-based learning activities.</p></div></a>
+      <a href="#padlet" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🧱</div><h3>Padlet</h3><p>Share ideas, notes, images, and group discussion posts.</p></div></a>
+      <a href="#quizizz" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">✅</div><h3>Quizizz</h3><p>Interactive quizzes for revision, assessment, and learning practice.</p></div></a>
+      <a href="#classroom" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">📚</div><h3>Google Classroom</h3><p>Manage assignments, materials, feedback, and class communication.</p></div></a>
     </div>
   </section>
 
-  <section id="canva">
-    <h2 class="reveal">Canva</h2>
-    <div class="card about-box reveal">
-      <p>
-        Canva is useful for creating creative teaching materials such as posters, presentations,
-        infographics, worksheets, and classroom visuals. It helps teachers make lessons more attractive
-        and easier for students to understand.
-      </p>
-    </div>
+  <section id="canva" data-number="04">
+    <h2 class="reveal">Canva <span>Review</span></h2>
+    <div class="card about-box reveal"><p>Canva is useful for creating creative teaching materials such as posters, presentations, infographics, worksheets, and classroom visuals.</p></div>
   </section>
 
-  <section id="kahoot">
-    <h2 class="reveal">Kahoot</h2>
-    <div class="card about-box reveal">
-      <p>
-        Kahoot uses game-based learning to make quizzes more exciting. It can increase student motivation,
-        encourage participation, and make revision sessions more fun.
-      </p>
-    </div>
+  <section id="kahoot" data-number="05">
+    <h2 class="reveal">Kahoot <span>Review</span></h2>
+    <div class="card about-box reveal"><p>Kahoot uses game-based learning to make quizzes exciting. It can increase motivation, encourage participation, and make revision fun.</p></div>
   </section>
 
-  <section id="padlet">
-    <h2 class="reveal">Padlet</h2>
-    <div class="card about-box reveal">
-      <p>
-        Padlet works like a digital wall where students can share ideas, upload images, answer questions,
-        and collaborate with classmates. It is very useful for brainstorming and discussion activities.
-      </p>
-    </div>
+  <section id="padlet" data-number="06">
+    <h2 class="reveal">Padlet <span>Review</span></h2>
+    <div class="card about-box reveal"><p>Padlet works like a digital wall where students can share ideas, upload images, answer questions, and collaborate with classmates.</p></div>
   </section>
 
-  <section id="quizizz">
-    <h2 class="reveal">Quizizz</h2>
-    <div class="card about-box reveal">
-      <p>
-        Quizizz allows teachers to create interactive quizzes that students can answer at their own pace.
-        It is suitable for formative assessment, revision, and checking student understanding.
-      </p>
-    </div>
+  <section id="quizizz" data-number="07">
+    <h2 class="reveal">Quizizz <span>Review</span></h2>
+    <div class="card about-box reveal"><p>Quizizz allows teachers to create interactive quizzes that students can answer at their own pace. It is suitable for formative assessment and revision.</p></div>
   </section>
 
-  <section id="classroom">
-    <h2 class="reveal">Google Classroom</h2>
-    <div class="card about-box reveal">
-      <p>
-        Google Classroom helps organize classwork, assignments, announcements, and learning resources.
-        It supports communication between teachers and students in a simple online learning environment.
-      </p>
-    </div>
+  <section id="classroom" data-number="08">
+    <h2 class="reveal">Google <span>Classroom</span></h2>
+    <div class="card about-box reveal"><p>Google Classroom helps organize classwork, assignments, announcements, and learning resources in a simple online environment.</p></div>
   </section>
 
-  <section id="review">
-    <h2 class="reveal">My Review</h2>
+  <section id="review" data-number="09">
+    <h2 class="reveal">My <span>Review</span></h2>
     <div class="grid">
-      <div class="card review-card reveal">
-        <h3>Most Creative</h3>
-        <p>Canva is the best for designing creative and attractive learning materials.</p>
-      </div>
-      <div class="card review-card reveal">
-        <h3>Most Fun</h3>
-        <p>Kahoot and Quizizz make learning feel like a game, which can motivate students.</p>
-      </div>
-      <div class="card review-card reveal">
-        <h3>Best for Classroom Management</h3>
-        <p>Google Classroom is very useful for organizing assignments and learning resources.</p>
-      </div>
+      <div class="card review-card reveal"><h3>Most Creative</h3><p>Canva is the best for designing creative and attractive learning materials.</p></div>
+      <div class="card review-card reveal"><h3>Most Fun</h3><p>Kahoot and Quizizz make learning feel like a game, which can motivate students.</p></div>
+      <div class="card review-card reveal"><h3>Best Management</h3><p>Google Classroom is useful for organizing assignments and learning resources.</p></div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="reveal">Contact Me</h2>
+  <section id="contact" data-number="10">
+    <h2 class="reveal">Contact <span>Me</span></h2>
     <div class="card contact-box reveal">
-      <p>
-        Thank you for visiting my portfolio. You can contact me through email, GitHub, or social media.
-      </p>
+      <p>Thank you for visiting my portfolio. You can contact me through email, GitHub, or LinkedIn.</p>
       <div class="contact-links">
         <a href="mailto:your-email@gmail.com">Email Me</a>
         <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/muhammad-husain-7a3a5127b/" target="_blank">LinkedIn</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Husain. Made with HTML, CSS & JavaScript.</p>
+    <p>© 2026 Husain. Fitness Portfolio.</p>
   </footer>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
+    const guideText = document.getElementById('guideText');
 
     function revealOnScroll() {
-      for (let i = 0; i < reveals.length; i++) {
+      reveals.forEach(item => {
         const windowHeight = window.innerHeight;
-        const revealTop = reveals[i].getBoundingClientRect().top;
-        const revealPoint = 120;
-
-        if (revealTop < windowHeight - revealPoint) {
-          reveals[i].classList.add('active');
+        const revealTop = item.getBoundingClientRect().top;
+        if (revealTop < windowHeight - 120) {
+          item.classList.add('active');
         }
+      });
+    }
+
+    function updateFitnessGuide() {
+      const scrollY = window.scrollY;
+      const pageHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = scrollY / pageHeight;
+
+      if (progress < 0.15) {
+        guideText.innerHTML = 'Yo! Welcome. <span>Let\'s start!</span> 💪';
+      } else if (progress < 0.32) {
+        guideText.innerHTML = 'About me section. <span>Keep going!</span>';
+      } else if (progress < 0.52) {
+        guideText.innerHTML = 'These are my apps. <span>Stay strong!</span>';
+      } else if (progress < 0.76) {
+        guideText.innerHTML = 'Review time. <span>One more rep!</span>';
+      } else {
+        guideText.innerHTML = 'Workout complete. <span>Contact me!</span> 🏆';
       }
     }
 
-    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', () => {
+      revealOnScroll();
+      updateFitnessGuide();
+    });
+
     revealOnScroll();
+    updateFitnessGuide();
   </script>
 </body>
 </html>
