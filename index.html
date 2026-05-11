@@ -1,52 +1,61 @@
 <!DOCTYPE html>
-        <h3>4. Analytical Discussion and Support of Ideas</h3>
-        <p>
-            Canva is suitable for my subject because visual materials help students understand
-            complex concepts more effectively.
-        </p>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#entry1">Entry 1</a></li>
+    <li><a href="#entry2">Entry 2</a></li>
+    <li><a href="#entry3">Entry 3</a></li>
+    <li><a href="#entry4">Entry 4</a></li>
+    <li><a href="#entry5">Entry 5</a></li>
+  </ul>
+</nav>
 
-        <h3>5. Academic Writing Quality</h3>
-        <p>
-            This section is written using formal academic language and organized logically.
-        </p>
+<header id="home">
+  <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+  <h1>EDU456 E-Portfolio</h1>
+  <p>Emerging Digital Platforms for Teaching and Learning</p>
+  <p><strong>Your Name</strong> • Your Subject Area</p>
+  <a href="#about" class="hero-btn">Explore My Portfolio</a>
+</header>
 
-        <h3>Instructional Video</h3>
-        <p>Replace the video link below with your own YouTube tutorial.</p>
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-    </section>
+<div class="container">
+  <section id="about" class="card">
+    <h2>About This Portfolio</h2>
+    <p>This e-portfolio presents five emerging digital platforms and explains how they can improve teaching and learning in my subject area.</p>
+  </section>
 
-    <section id="entry2" class="card">
-        <h2>Entry 2: Nearpod</h2>
-        <p>Repeat the same five required components and embed your YouTube video.</p>
-    </section>
+  <section id="entry1" class="card">
+    <h2>Entry 1: Canva</h2>
+    <h3>1. Description and Features</h3>
+    <p>Describe Canva and its main features.</p>
+    <h3>2. Critical Evaluation</h3>
+    <p>Explain advantages, limitations, and educational value.</p>
+    <h3>3. Guidelines on Using the Tool</h3>
+    <ol><li>Create an account</li><li>Choose a template</li><li>Edit content</li><li>Use in class</li></ol>
+    <h3>4. Analytical Discussion</h3>
+    <p>Explain why it suits your subject area.</p>
+    <h3>5. Academic Writing Quality</h3>
+    <p>Use formal, organized writing.</p>
+    <h3>Instructional Video</h3>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </section>
 
-    <section id="entry3" class="card">
-        <h2>Entry 3: Quizizz</h2>
-        <p>Repeat the same five required components and embed your YouTube video.</p>
-    </section>
-
-    <section id="entry4" class="card">
-        <h2>Entry 4: Genially</h2>
-        <p>Repeat the same five required components and embed your YouTube video.</p>
-    </section>
-
-    <section id="entry5" class="card">
-        <h2>Entry 5: Kahoot!</h2>
-        <p>Repeat the same five required components and embed your YouTube video.</p>
-    </section>
-
-    <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: https://github.com/yourusername</p>
-        <p>YouTube: https://youtube.com/@yourchannel</p>
-    </section>
-
+  <section id="entry2" class="card"><h2>Entry 2: Nearpod</h2><p>Add your content here.</p></section>
+  <section id="entry3" class="card"><h2>Entry 3: Quizizz</h2><p>Add your content here.</p></section>
+  <section id="entry4" class="card"><h2>Entry 4: Genially</h2><p>Add your content here.</p></section>
+  <section id="entry5" class="card"><h2>Entry 5: Kahoot!</h2><p>Add your content here.</p></section>
 </div>
 
 <footer>
-    <p>© 2026 Your Name | EDU456 E-Portfolio</p>
+  © 2026 Your Name • EDU456 E-Portfolio
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+cards.forEach((card, i) => {
+  card.style.animationDelay = `${i * 0.15}s`;
+});
+</script>
 
 </body>
 </html>
