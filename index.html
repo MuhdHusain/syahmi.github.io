@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husain Fitness Portfolio</title>
+  <title>Muhammad Husain | Engineering Technology E-Portfolio</title>
 
   <style>
     * {
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0f172a;
+      background: #0b1120;
       color: #f8fafc;
       overflow-x: hidden;
     }
@@ -25,10 +25,22 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 15%, rgba(251, 113, 133, 0.22), transparent 30%),
-        radial-gradient(circle at 85% 25%, rgba(59, 130, 246, 0.16), transparent 32%),
-        radial-gradient(circle at 50% 90%, rgba(248, 113, 113, 0.13), transparent 35%),
-        linear-gradient(120deg, #111827, #0f172a, #111111);
+        radial-gradient(circle at 18% 18%, rgba(37, 99, 235, 0.22), transparent 32%),
+        radial-gradient(circle at 85% 25%, rgba(239, 68, 68, 0.16), transparent 35%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.12), transparent 35%),
+        linear-gradient(120deg, #020617, #0f172a, #111827);
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 55px 55px;
+      opacity: 0.35;
       z-index: -2;
     }
 
@@ -36,32 +48,35 @@
       position: fixed;
       left: 0;
       top: 0;
-      width: 150px;
+      width: 165px;
       height: 100vh;
-      padding: 32px 16px;
+      padding: 30px 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(2, 6, 23, 0.9);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 10px 0 35px rgba(0, 0, 0, 0.25);
       z-index: 999;
+      backdrop-filter: blur(14px);
     }
 
     .logo {
-      color: #ef4444;
-      font-size: 23px;
-      font-weight: 800;
-      margin-bottom: 48px;
+      color: #38bdf8;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 40px;
       text-align: center;
+      line-height: 1.1;
     }
 
     .logo span {
       display: block;
-      color: #e5e7eb;
-      font-size: 11px;
+      color: #f8fafc;
+      font-size: 10px;
       letter-spacing: 2px;
-      margin-top: 4px;
+      margin-top: 6px;
+      font-weight: 700;
     }
 
     nav ul {
@@ -69,33 +84,33 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
     nav a {
       display: block;
       color: #cbd5e1;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       text-align: center;
-      padding: 14px 8px;
-      border-radius: 18px;
+      padding: 13px 8px;
+      border-radius: 16px;
       border: 1px solid transparent;
       transition: 0.3s;
     }
 
     nav a:hover {
       color: white;
-      background: rgba(251, 113, 133, 0.16);
-      border-color: rgba(251, 113, 133, 0.35);
+      background: rgba(56, 189, 248, 0.14);
+      border-color: rgba(56, 189, 248, 0.35);
       transform: translateX(5px);
     }
 
     section {
       min-height: 100vh;
-      margin-left: 150px;
-      padding: 95px 8% 80px;
+      margin-left: 165px;
+      padding: 90px 8% 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -108,29 +123,43 @@
       position: absolute;
       right: 6%;
       top: 65px;
-      font-size: clamp(60px, 10vw, 125px);
+      font-size: clamp(58px, 10vw, 125px);
       font-weight: 900;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(251, 113, 133, 0.2);
-      opacity: 0.7;
+      -webkit-text-stroke: 1px rgba(56, 189, 248, 0.22);
+      opacity: 0.75;
       pointer-events: none;
     }
 
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
     h1 {
-      font-size: clamp(42px, 7vw, 82px);
+      font-size: clamp(40px, 7vw, 82px);
       line-height: 1.05;
-      letter-spacing: -1px;
+      letter-spacing: -2px;
       margin-bottom: 25px;
-      max-width: 900px;
+      max-width: 980px;
     }
 
     h1 span,
     h2 span {
-      color: #ef4444;
+      color: #38bdf8;
     }
 
     h2 {
-      font-size: clamp(34px, 5vw, 56px);
+      font-size: clamp(32px, 5vw, 56px);
       letter-spacing: -1px;
       margin-bottom: 28px;
       position: relative;
@@ -140,50 +169,73 @@
     h2::after {
       content: "";
       display: block;
-      width: 90px;
+      width: 92px;
       height: 4px;
-      background: #ef4444;
+      background: linear-gradient(90deg, #38bdf8, #ef4444);
       margin-top: 12px;
       border-radius: 999px;
-      box-shadow: 0 0 20px rgba(251, 113, 133, 0.45);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
     }
 
-    p {
+    h3 {
+      color: white;
+      margin: 22px 0 10px;
+      font-size: 21px;
+    }
+
+    p, li {
       color: #d1d5db;
       line-height: 1.8;
-      font-size: 18px;
+      font-size: 17px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 10px;
     }
 
     .hero-content {
-      max-width: 780px;
+      max-width: 880px;
       position: relative;
       z-index: 2;
     }
 
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 34px;
-      padding: 15px 34px;
+      padding: 14px 28px;
       color: white;
-      background: linear-gradient(90deg, #ef4444, #ef4444);
+      background: linear-gradient(90deg, #2563eb, #0891b2);
       text-decoration: none;
       border-radius: 999px;
       font-weight: 800;
-      box-shadow: 0 14px 30px rgba(251, 113, 133, 0.2);
+      box-shadow: 0 14px 30px rgba(56, 189, 248, 0.18);
       transition: 0.3s;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: none;
     }
 
     .btn:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(251, 113, 133, 0.35);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.28);
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(15, 23, 42, 0.78);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 24px;
       padding: 30px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(15px);
       transition: 0.35s;
       position: relative;
@@ -191,13 +243,13 @@
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(251, 113, 133, 0.5);
-      box-shadow: 0 20px 45px rgba(251, 113, 133, 0.14);
+      transform: translateY(-7px);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 20px 45px rgba(56, 189, 248, 0.12);
     }
 
     .about-box {
-      max-width: 850px;
+      max-width: 920px;
     }
 
     .stats {
@@ -209,52 +261,71 @@
 
     .stat {
       padding-left: 15px;
-      border-left: 4px solid #ef4444;
+      border-left: 4px solid #38bdf8;
       color: #d1d5db;
     }
 
     .stat strong {
       display: block;
-      color: #ef4444;
+      color: #38bdf8;
       font-size: 30px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 22px;
       margin-top: 25px;
       position: relative;
       z-index: 2;
     }
 
-    .app-card {
-      text-align: center;
-      min-height: 210px;
+    .tool-card {
+      min-height: 230px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .app-icon {
-      font-size: 48px;
+    .tool-icon {
+      font-size: 46px;
       margin-bottom: 15px;
-      filter: drop-shadow(0 0 12px rgba(251, 113, 133, 0.28));
+      filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.28));
     }
 
-    .app-card h3,
+    .tool-card h3,
     .review-card h3 {
+      margin-top: 0;
       margin-bottom: 12px;
-      color: white;
     }
 
-    .app-card p,
+    .tool-card p,
     .review-card p {
-      font-size: 15px;
+      font-size: 15.5px;
     }
 
-    .contact-box {
-      max-width: 720px;
+    .app-detail {
+      max-width: 980px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      color: #7dd3fc;
+      font-size: 18px;
     }
 
     .contact-links {
@@ -266,17 +337,17 @@
 
     .contact-links a {
       padding: 13px 24px;
-      background: rgba(251, 113, 133, 0.12);
+      background: rgba(56, 189, 248, 0.12);
       color: white;
       text-decoration: none;
       border-radius: 999px;
-      border: 1px solid rgba(251, 113, 133, 0.35);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       font-weight: 800;
       transition: 0.3s;
     }
 
     .contact-links a:hover {
-      background: #ef4444;
+      background: #2563eb;
       transform: translateY(-5px);
     }
 
@@ -292,11 +363,11 @@
     }
 
     footer {
-      margin-left: 150px;
+      margin-left: 165px;
       text-align: center;
       padding: 25px;
       color: #9ca3af;
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(2, 6, 23, 0.78);
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -329,13 +400,17 @@
       }
 
       section {
-        padding: 155px 6% 80px;
+        padding: 160px 6% 80px;
       }
 
       section::after {
         top: 135px;
         right: 6%;
-        font-size: 64px;
+        font-size: 62px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 58px);
       }
     }
   </style>
@@ -343,24 +418,30 @@
 
 <body>
   <nav>
-    <div class="logo">FIT<span>PORTFOLIO</span></div>
+    <div class="logo">HUSAIN<span>E-PORTFOLIO</span></div>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#apps">Apps I Use</a></li>
-      <li><a href="#review">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#objectives">Objectives</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#reflection">Reflection</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section id="home" data-number="01">
     <div class="hero-content reveal">
-      <h1>Fitness learning, <span>made simple and active.</span></h1>
+      <span class="tag">Engineering Technology Student Portfolio</span>
+      <h1>Muhammad Husain Bin Badrul Hisham</h1>
       <p>
-        Welcome to my fitness class digital portfolio. I’m Husain, and this page shows my fitness learning journey,
-        the digital apps I use, my review, and how technology can make fitness education more active and exciting.
+        Welcome to my e-portfolio. This website presents five digital platforms that are useful for technology,
+        engineering design, digital learning, and productivity. Each tool is reviewed based on its educational value,
+        strengths, limitations, classroom application, and my personal reflection.
       </p>
-      <a href="#about" class="btn">Start Reading</a>
+      <div class="btn-row">
+        <a href="#tools" class="btn">Explore Tools</a>
+        <a href="#reflection" class="btn secondary">Read Reflection</a>
+      </div>
     </div>
   </section>
 
@@ -368,72 +449,155 @@
     <h2 class="reveal">About <span>Me</span></h2>
     <div class="card about-box reveal">
       <p>
-        My name is Husain. I am a student who is interested in fitness, technology, digital learning,
-        creative design, and modern teaching tools. I enjoy exploring platforms that make learning
-        more active, interactive, engaging, and easier for students to understand.
+        My name is <strong>Muhammad Husain Bin Badrul Hisham</strong>. I am a technology and engineering student
+        with an interest in digital tools, technical design, coding, documentation, and creative problem solving.
+        I believe technology can make learning more practical, interactive, and connected to real-world industry skills.
       </p>
       <br>
       <p>
-        This e-portfolio highlights five digital applications that can be used in a fitness class.
-        Each app has its own strengths and can help teachers create better, healthier, and more exciting learning experiences.
+        This e-portfolio focuses on five applications that support my learning journey: Canva, Visual Studio Code,
+        AutoCAD, Tinkercad, and Microsoft Office. These tools help students design, code, model, present, and document
+        their ideas professionally.
       </p>
       <div class="stats">
-        <div class="stat"><strong>5</strong>Fitness Apps</div>
-        <div class="stat"><strong>100%</strong>Effort</div>
-        <div class="stat"><strong>1</strong>Goal: Improve</div>
+        <div class="stat"><strong>5</strong>Digital Tools</div>
+        <div class="stat"><strong>1</strong>Engineering Portfolio</div>
+        <div class="stat"><strong>100%</strong>Custom HTML/CSS</div>
       </div>
     </div>
   </section>
 
-  <section id="apps" data-number="03">
-    <h2 class="reveal">Apps <span>I Use</span></h2>
-    <div class="grid">
-      <a href="#canva" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🎨</div><h3>Canva</h3><p>Design posters, slides, infographics, and creative fitness class materials.</p></div></a>
-      <a href="#kahoot" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🎮</div><h3>Kahoot</h3><p>Create fun quizzes and game-based learning activities.</p></div></a>
-      <a href="#padlet" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">🧱</div><h3>Padlet</h3><p>Share ideas, notes, images, and group discussion posts.</p></div></a>
-      <a href="#quizizz" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">✅</div><h3>Quizizz</h3><p>Interactive quizzes for revision, assessment, and learning practice.</p></div></a>
-      <a href="#classroom" style="text-decoration:none;color:inherit;"><div class="card app-card reveal"><div class="app-icon">📚</div><h3>Google Classroom</h3><p>Manage assignments, materials, feedback, and class communication.</p></div></a>
+  <section id="objectives" data-number="03">
+    <h2 class="reveal">Portfolio <span>Objectives</span></h2>
+    <div class="card about-box reveal">
+      <p>The objectives of this e-portfolio are to:</p>
+      <ul>
+        <li>Identify digital platforms that support teaching, learning, and technical skill development.</li>
+        <li>Evaluate the educational value, strengths, and limitations of each platform.</li>
+        <li>Explain how each tool can be applied in classroom or project-based learning activities.</li>
+        <li>Develop digital competence by presenting learning content through a custom website.</li>
+        <li>Reflect on how technology can improve creativity, communication, and engineering problem solving.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="canva" data-number="04">
-    <h2 class="reveal">Canva <span>Review</span></h2>
-    <div class="card about-box reveal"><p>Canva is useful for creating creative teaching materials such as posters, presentations, infographics, worksheets, and classroom visuals.</p></div>
-  </section>
-
-  <section id="kahoot" data-number="05">
-    <h2 class="reveal">Kahoot <span>Review</span></h2>
-    <div class="card about-box reveal"><p>Kahoot uses game-based learning to make quizzes exciting. It can increase motivation, encourage participation, and make revision fun.</p></div>
-  </section>
-
-  <section id="padlet" data-number="06">
-    <h2 class="reveal">Padlet <span>Review</span></h2>
-    <div class="card about-box reveal"><p>Padlet works like a digital wall where students can share ideas, upload images, answer questions, and collaborate with classmates.</p></div>
-  </section>
-
-  <section id="quizizz" data-number="07">
-    <h2 class="reveal">Quizizz <span>Review</span></h2>
-    <div class="card about-box reveal"><p>Quizizz allows teachers to create interactive quizzes that students can answer at their own pace. It is suitable for formative assessment and revision.</p></div>
-  </section>
-
-  <section id="classroom" data-number="08">
-    <h2 class="reveal">Google <span>Classroom</span></h2>
-    <div class="card about-box reveal"><p>Google Classroom helps organize classwork, assignments, announcements, and learning resources in a simple online environment.</p></div>
-  </section>
-
-  <section id="review" data-number="09">
-    <h2 class="reveal">My <span>Review</span></h2>
+  <section id="tools" data-number="04">
+    <h2 class="reveal">Five <span>Digital Tools</span></h2>
     <div class="grid">
-      <div class="card review-card reveal"><h3>Most Creative</h3><p>Canva is the best for designing creative and attractive learning materials.</p></div>
-      <div class="card review-card reveal"><h3>Most Fun</h3><p>Kahoot and Quizizz make learning feel like a game, which can motivate students.</p></div>
-      <div class="card review-card reveal"><h3>Best Management</h3><p>Google Classroom is useful for organizing assignments and learning resources.</p></div>
+      <a href="#canva" style="text-decoration:none;color:inherit;"><div class="card tool-card reveal"><div class="tool-icon">🎨</div><h3>Canva</h3><p>Design platform for posters, slides, infographics, and visual communication.</p></div></a>
+      <a href="#vscode" style="text-decoration:none;color:inherit;"><div class="card tool-card reveal"><div class="tool-icon">💻</div><h3>Visual Studio Code</h3><p>Code editor for programming, web development, debugging, and project work.</p></div></a>
+      <a href="#autocad" style="text-decoration:none;color:inherit;"><div class="card tool-card reveal"><div class="tool-icon">📐</div><h3>AutoCAD</h3><p>Technical drawing software for engineering design and accurate drafting.</p></div></a>
+      <a href="#tinkercad" style="text-decoration:none;color:inherit;"><div class="card tool-card reveal"><div class="tool-icon">🔌</div><h3>Tinkercad</h3><p>Beginner-friendly platform for 3D design, electronics, and circuit simulation.</p></div></a>
+      <a href="#office" style="text-decoration:none;color:inherit;"><div class="card tool-card reveal"><div class="tool-icon">📄</div><h3>Microsoft Office</h3><p>Word and PowerPoint for reports, documentation, and professional presentations.</p></div></a>
     </div>
   </section>
 
-  <section id="contact" data-number="10">
+  <section id="canva" data-number="05">
+    <h2 class="reveal">Canva <span>Evaluation</span></h2>
+    <div class="card app-detail reveal">
+      <p>Canva is a visual design platform used to create posters, presentations, infographics, social media graphics, and educational materials.</p>
+      <div class="mini-grid">
+        <div class="mini-card"><h3>Educational Value</h3><p>Canva helps students communicate ideas visually and improves creativity, layout design, and presentation skills.</p></div>
+        <div class="mini-card"><h3>Strengths</h3><p>It is easy to use, has many templates, supports collaboration, and produces professional-looking materials quickly.</p></div>
+        <div class="mini-card"><h3>Limitations</h3><p>Some advanced templates and design elements require paid access, and students may rely too much on ready-made templates.</p></div>
+        <div class="mini-card"><h3>Classroom Application</h3><p>Students can create infographics explaining engineering concepts, safety procedures, or project summaries.</p></div>
+      </div>
+      <h3>Personal Reflection</h3>
+      <p>Canva is useful because it allows me to present technical information in a clearer and more attractive way, especially for assignments and presentations.</p>
+    </div>
+  </section>
+
+  <section id="vscode" data-number="06">
+    <h2 class="reveal">Visual Studio Code <span>Evaluation</span></h2>
+    <div class="card app-detail reveal">
+      <p>Visual Studio Code is a lightweight code editor used for programming, web development, debugging, and managing coding projects.</p>
+      <div class="mini-grid">
+        <div class="mini-card"><h3>Educational Value</h3><p>It helps students learn programming structure, problem solving, debugging, and real-world software development workflow.</p></div>
+        <div class="mini-card"><h3>Strengths</h3><p>It supports many programming languages, extensions, Git integration, terminal usage, and live preview tools.</p></div>
+        <div class="mini-card"><h3>Limitations</h3><p>Beginners may feel confused by extensions, setup, terminal commands, and error messages at first.</p></div>
+        <div class="mini-card"><h3>Classroom Application</h3><p>Students can use VS Code to build websites, write Python or C programs, and collaborate through GitHub projects.</p></div>
+      </div>
+      <h3>Personal Reflection</h3>
+      <p>VS Code is important for me because it connects directly to practical coding skills. It teaches me to build, test, fix, and improve digital projects step by step.</p>
+    </div>
+  </section>
+
+  <section id="autocad" data-number="07">
+    <h2 class="reveal">AutoCAD <span>Evaluation</span></h2>
+    <div class="card app-detail reveal">
+      <p>AutoCAD is a computer-aided design software used to create accurate 2D drawings and technical designs for engineering and architecture.</p>
+      <div class="mini-grid">
+        <div class="mini-card"><h3>Educational Value</h3><p>AutoCAD trains students to understand technical drawing, measurement accuracy, design standards, and engineering documentation.</p></div>
+        <div class="mini-card"><h3>Strengths</h3><p>It is precise, professional, widely used in industry, and suitable for producing technical diagrams and detailed plans.</p></div>
+        <div class="mini-card"><h3>Limitations</h3><p>It requires practice, a capable computer, and understanding of drawing commands, layers, dimensions, and scale.</p></div>
+        <div class="mini-card"><h3>Classroom Application</h3><p>Students can draw circuit layouts, mechanical parts, floor plans, or engineering diagrams as part of technical assignments.</p></div>
+      </div>
+      <h3>Personal Reflection</h3>
+      <p>AutoCAD is valuable because it improves my attention to detail. It teaches me that engineering work must be clear, accurate, and properly documented.</p>
+    </div>
+  </section>
+
+  <section id="tinkercad" data-number="08">
+    <h2 class="reveal">Tinkercad <span>Evaluation</span></h2>
+    <div class="card app-detail reveal">
+      <p>Tinkercad is an online platform for 3D design, basic electronics, Arduino simulation, and circuit learning.</p>
+      <div class="mini-grid">
+        <div class="mini-card"><h3>Educational Value</h3><p>It supports hands-on learning by allowing students to test circuits and designs virtually before building them physically.</p></div>
+        <div class="mini-card"><h3>Strengths</h3><p>It is beginner-friendly, web-based, free to access, and useful for learning circuits, sensors, LEDs, and Arduino basics.</p></div>
+        <div class="mini-card"><h3>Limitations</h3><p>It is not as advanced as professional simulation tools and may not include every real-world component or circuit condition.</p></div>
+        <div class="mini-card"><h3>Classroom Application</h3><p>Students can simulate simple electronic circuits, test Arduino code, and design 3D models for project-based learning.</p></div>
+      </div>
+      <h3>Personal Reflection</h3>
+      <p>Tinkercad helps me understand electronics more clearly because I can experiment safely, make mistakes, and learn before using real components.</p>
+    </div>
+  </section>
+
+  <section id="office" data-number="09">
+    <h2 class="reveal">Microsoft Office <span>Evaluation</span></h2>
+    <div class="card app-detail reveal">
+      <p>Microsoft Office, especially Word and PowerPoint, is used for writing reports, preparing slides, organizing information, and presenting ideas.</p>
+      <div class="mini-grid">
+        <div class="mini-card"><h3>Educational Value</h3><p>It develops academic writing, documentation, communication, and presentation skills that are important for students and future workers.</p></div>
+        <div class="mini-card"><h3>Strengths</h3><p>Word is strong for reports and formatting, while PowerPoint is effective for visual explanation and oral presentations.</p></div>
+        <div class="mini-card"><h3>Limitations</h3><p>Good results still depend on the user’s writing quality, design choices, formatting consistency, and presentation skills.</p></div>
+        <div class="mini-card"><h3>Classroom Application</h3><p>Students can use Word for lab reports and PowerPoint for project presentations, proposals, and group work.</p></div>
+      </div>
+      <h3>Personal Reflection</h3>
+      <p>Microsoft Office is important because it helps me organize my work professionally. It is useful for reports, assignments, final-year projects, and presentations.</p>
+    </div>
+  </section>
+
+  <section id="reflection" data-number="10">
+    <h2 class="reveal">Final <span>Reflection</span></h2>
+    <div class="card about-box reveal">
+      <p>
+        Through this e-portfolio, I learned that digital tools are not only used to complete assignments, but also to build real skills.
+        Canva improves visual communication, Visual Studio Code supports coding, AutoCAD develops technical drawing accuracy,
+        Tinkercad strengthens electronics understanding, and Microsoft Office supports documentation and presentation.
+      </p>
+      <br>
+      <p>
+        As an engineering technology student, these platforms help me become more creative, organized, and confident in solving problems.
+        They also show how technology can make teaching and learning more practical, interactive, and connected to future workplace needs.
+      </p>
+    </div>
+  </section>
+
+  <section id="references" data-number="11">
+    <h2 class="reveal">References</h2>
+    <div class="card about-box reveal">
+      <p>Canva. (2026). Canva design platform. https://www.canva.com</p>
+      <p>Microsoft. (2026). Visual Studio Code. https://code.visualstudio.com</p>
+      <p>Autodesk. (2026). AutoCAD. https://www.autodesk.com/products/autocad</p>
+      <p>Autodesk. (2026). Tinkercad. https://www.tinkercad.com</p>
+      <p>Microsoft. (2026). Microsoft Office. https://www.microsoft.com/microsoft-365</p>
+    </div>
+  </section>
+
+  <section id="contact" data-number="12">
     <h2 class="reveal">Contact <span>Me</span></h2>
-    <div class="card contact-box reveal">
-      <p>Thank you for visiting my portfolio. You can contact me through email, GitHub, or LinkedIn.</p>
+    <div class="card about-box reveal">
+      <p>Thank you for visiting my e-portfolio. You can contact me through email, GitHub, or LinkedIn.</p>
       <div class="contact-links">
         <a href="mailto:your-email@gmail.com">Email Me</a>
         <a href="https://github.com/yourusername" target="_blank">GitHub</a>
@@ -443,7 +607,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Husain. Fitness Portfolio.</p>
+    <p>© 2026 Muhammad Husain Bin Badrul Hisham. Engineering Technology E-Portfolio.</p>
   </footer>
 
   <script>
