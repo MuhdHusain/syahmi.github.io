@@ -1,61 +1,66 @@
 <!DOCTYPE html>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#entry1">Entry 1</a></li>
-    <li><a href="#entry2">Entry 2</a></li>
-    <li><a href="#entry3">Entry 3</a></li>
-    <li><a href="#entry4">Entry 4</a></li>
-    <li><a href="#entry5">Entry 5</a></li>
-  </ul>
-</nav>
-
-<header id="home">
-  <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-  <h1>EDU456 E-Portfolio</h1>
-  <p>Emerging Digital Platforms for Teaching and Learning</p>
-  <p><strong>Your Name</strong> • Your Subject Area</p>
-  <a href="#about" class="hero-btn">Explore My Portfolio</a>
-</header>
-
-<div class="container">
-  <section id="about" class="card">
-    <h2>About This Portfolio</h2>
-    <p>This e-portfolio presents five emerging digital platforms and explains how they can improve teaching and learning in my subject area.</p>
+    <h2 class="reveal">Google Classroom</h2>
+    <div class="card about-box reveal">
+      <p>
+        Google Classroom helps organize classwork, assignments, announcements, and learning resources.
+        It supports communication between teachers and students in a simple online learning environment.
+      </p>
+    </div>
   </section>
 
-  <section id="entry1" class="card">
-    <h2>Entry 1: Canva</h2>
-    <h3>1. Description and Features</h3>
-    <p>Describe Canva and its main features.</p>
-    <h3>2. Critical Evaluation</h3>
-    <p>Explain advantages, limitations, and educational value.</p>
-    <h3>3. Guidelines on Using the Tool</h3>
-    <ol><li>Create an account</li><li>Choose a template</li><li>Edit content</li><li>Use in class</li></ol>
-    <h3>4. Analytical Discussion</h3>
-    <p>Explain why it suits your subject area.</p>
-    <h3>5. Academic Writing Quality</h3>
-    <p>Use formal, organized writing.</p>
-    <h3>Instructional Video</h3>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  <section id="review">
+    <h2 class="reveal">My Review</h2>
+    <div class="grid">
+      <div class="card review-card reveal">
+        <h3>Most Creative</h3>
+        <p>Canva is the best for designing creative and attractive learning materials.</p>
+      </div>
+      <div class="card review-card reveal">
+        <h3>Most Fun</h3>
+        <p>Kahoot and Quizizz make learning feel like a game, which can motivate students.</p>
+      </div>
+      <div class="card review-card reveal">
+        <h3>Best for Classroom Management</h3>
+        <p>Google Classroom is very useful for organizing assignments and learning resources.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="entry2" class="card"><h2>Entry 2: Nearpod</h2><p>Add your content here.</p></section>
-  <section id="entry3" class="card"><h2>Entry 3: Quizizz</h2><p>Add your content here.</p></section>
-  <section id="entry4" class="card"><h2>Entry 4: Genially</h2><p>Add your content here.</p></section>
-  <section id="entry5" class="card"><h2>Entry 5: Kahoot!</h2><p>Add your content here.</p></section>
-</div>
+  <section id="contact">
+    <h2 class="reveal">Contact Me</h2>
+    <div class="card contact-box reveal">
+      <p>
+        Thank you for visiting my portfolio. You can contact me through email, GitHub, or social media.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:your-email@gmail.com">Email Me</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2026 Your Name • EDU456 E-Portfolio
-</footer>
+  <footer>
+    <p>© 2026 Husain. Made with HTML, CSS & JavaScript.</p>
+  </footer>
 
-<script>
-const cards = document.querySelectorAll('.card');
-cards.forEach((card, i) => {
-  card.style.animationDelay = `${i * 0.15}s`;
-});
-</script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
 
+    function revealOnScroll() {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 120;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>
